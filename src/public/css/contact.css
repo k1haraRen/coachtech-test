@@ -72,15 +72,17 @@ td {
     color: #8b7a6B;
 }
 
-input[type=checkbox] {
-    display: none;
+input[type=radio] {
+    position: absolute;
+    opacity: 0;
 }
 
 label {
     position: relative;
     padding: 0 0 0 40px;
-    margin-right: 90px;
+    margin-right: 50px;
     color: #7d776c;
+    cursor: pointer;
 }
 
 label::after {
@@ -100,28 +102,23 @@ label:hover::after {
     border-color: #0171bd;
 }
 
-label::after,label::before {
+label::before {
     position: absolute;
     content: "";
     display: block;
     top: 50%;
-}
-
-label::before {
     left: 14px;
     margin-top: -10px;
-    content: "";
-    display: block;
-    top: 50%;
     width: 17px;
     height: 17px;
     border: 1px solid #7d776c;
     background-color: #7d776c;
     border-radius: 50%;
     opacity: 0;
+    transition: opacity 0.2s;
 }
 
-input[type=checkbox]:checked + label::before {
+input[type=radio]:checked+label::before {
     opacity: 1;
 }
 

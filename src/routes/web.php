@@ -15,8 +15,8 @@ use App\Http\Controllers\FashionablyController;
 */
 
 Route::get('/', [FashionablyController::class, 'contact']);
-Route::get('/confirm', [FashionablyController::class, 'confirm']);
-Route::get('/thanks', [FashionablyController::class, 'thanks']);
+Route::post('/confirm', [FashionablyController::class, 'confirm']);
+Route::post('/thanks', [FashionablyController::class, 'thanks']);
 Route::get('/admin', [FashionablyController::class, 'admin']);
 Route::get('/register', [FashionablyController::class, 'register']);
 Route::get('/login', [FashionablyController::class, 'login']);

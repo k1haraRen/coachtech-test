@@ -23,7 +23,7 @@
                         <p class="thankyou">お問い合わせありがとうございました</p>
                     </div>
                     <div class="home-button">
-                        <button class="home-button__submit">HOME</button>
+                        <a href="/" class="home-button__submit">HOME</a>
                     </div>
                 </div>
             </div>
