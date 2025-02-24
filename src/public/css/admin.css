@@ -1,0 +1,155 @@
+.admin__view {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin__title {
+    margin: 10px auto;
+    text-align: center;
+    line-height: 0px;
+    font-family: "Inika", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 40px;
+    color: #7d776c;
+}
+
+.admin__content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.admin__content-item {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.admin__search-table {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    height: 40px;
+}
+
+.search-table__input {
+    width: 30%;
+    font-size: 18px;
+    border: solid 1px #C5B9B0;
+}
+
+.search-table__category {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+select {
+    height: 40px;
+    text-align: center;
+    border: solid 1px #C5B9B0;
+    background-color: #f4f4f4;
+    font-size: 20px;
+    color: #7d776c;
+}
+
+.search__category-sex {
+    width: 15%;
+}
+
+.search__category-kind {
+    width: 45%;
+}
+
+.search__category-ymd {
+    width: 25%;
+}
+
+.search-button {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.search-button__submit {
+    width: 40%;
+    height: 40px;
+    margin: auto 7px;
+    background-color: #7d776c;
+    font-size: 20px;
+    border: none;
+    color: #fff;
+}
+
+.search-button__reset {
+    width: 40%;
+    height: 40px;
+    margin: auto 7px;
+    background-color: #dBc5b4;
+    font-size: 100%;
+    border: none;
+    color: #fff;
+}
+
+.admin__pagination--export {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    margin: 10px 0px;
+}
+
+.admin-button__export {
+    width: 130px;
+    border: none;
+    background-color: #edead5;
+    color: #7d776c;
+    font-size: 100%;
+}
+
+.admin-table {
+    width: 100%;
+    margin: 15px 0px
+}
+
+.admin-table__inner {
+    width: 100%;
+}
+
+.admin-table__row:first-of-type {
+    background-color: #8b7a6B;
+    text-align: left;
+}
+
+.admin-table__row {
+    height: 50px;
+    width: 100px;
+}
+
+.admin-table__row:nth-child(n+1) {
+    border: solid 1px #C5B9B0;
+}
+
+.admin-table__header-span {
+    margin: 0px 0px 0px 100px;
+    color: #fff;
+}
+
+.admin-table__item-span1 {
+    margin: 0px 0px 0px 100px;
+    color: #8b7a6B;
+}
+
+.admin-table__item-span2 {
+    margin: 0px 0px 0px 100px;
+    color: #8b7a6B;
+    font-size: 14px;
+}
+
+.detail-form__button-submit {
+    border: solid 1px #C5B9B0;
+    background-color: #fff;
+    color: #C5B9B0;
+    width: 75px;
+    height: 30px;
+}

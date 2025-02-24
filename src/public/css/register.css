@@ -1,0 +1,78 @@
+.register__view {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    background-color: #f1eceB;
+}
+
+.register__title {
+    margin: 10px auto;
+    text-align: center;
+    line-height: 30px;
+    font-family: "Inika", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 40px;
+    color: #7d776c;
+}
+
+.register__content {
+    display: flex;
+    justify-content: center;
+}
+
+.register__content-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    border: solid 1px #C5B9B0;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.register__content-item {
+    width: 65%;
+    margin: 20px auto;
+}
+
+.register__content-table {
+    margin: 35px 0px 30px 0px;
+}
+
+.register-table__name {
+    padding: 20px 0px 0px 0px;
+    line-height: 0px;
+    font-size: 30px;
+    color: #7d776c;
+}
+
+.register-input__background {
+    width: 100%;
+    height: 60px;
+    background-color: #f4f4f4;
+}
+
+.register-table__input {
+    width: 80%;
+    height: 100%;
+    margin: auto 30px;
+    background-color: #f4f4f4;
+    border: none;
+    outline: none;
+    color: #7d776c;
+}
+
+.register__content-bottom {
+    text-align: center;
+    width: 100%;
+    margin: 0px 0px 60px 0px;
+}
+
+.register__button-submit {
+    padding: 10px 40px;
+    border: none;
+    background-color: #7d776c;
+    font-size: 20px;
+    color: #fff;
+}
