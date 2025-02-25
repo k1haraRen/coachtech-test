@@ -17,6 +17,10 @@ use App\Http\Controllers\FashionablyController;
 Route::get('/', [FashionablyController::class, 'contact']);
 Route::post('/confirm', [FashionablyController::class, 'confirm']);
 Route::post('/thanks', [FashionablyController::class, 'thanks']);
+
 Route::get('/admin', [FashionablyController::class, 'admin']);
+Route::get('/admin/search', [FashionablyController::class, 'search']);
+Route::delete('/admin/delete/{id}', [FashionablyController::class, 'destroy'])->name('admin.delete');
+
 Route::get('/register', [FashionablyController::class, 'register']);
 Route::get('/login', [FashionablyController::class, 'login']);

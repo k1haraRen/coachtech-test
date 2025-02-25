@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 
@@ -17,7 +18,7 @@ class FashionablyController extends Controller
 
         return view('contact', compact('contacts','categories', 'contact'));
     }
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $tel = "{$request->tel1}{$request->tel2}{$request->tel3}";
 
@@ -40,10 +41,37 @@ class FashionablyController extends Controller
         return view('thanks');
     }
 
-    public function admin()
+    public function admin(Request $request)
     {
-        return view('admin');
+        $contacts = Contact::with('category')->paginate(7);
+        $categories = Category::all();
+
+        return view('admin', compact('contacts', 'categories'));
     }
+    public function search(Request $request)
+    {
+        if ($request->has('reset') && $request->reset) {
+            return redirect()->route('admin');
+        }
+
+        $contacts = Contact::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->GenderSearch($request->gender)->DateSearch($request->created_at)->paginate(7);
+        $categories = category::all();
+
+        return view('admin', compact('contacts', 'categories'));
+    }
+    public function destroy(Request $request, $id)
+    {
+        $contact = Contact::find($id);
+
+        if ($contact) {
+            $contact->delete();
+            return response()->json(['message' => '削除しましたわ💖'], 200);
+        }
+
+        return response()->json(['message' => 'データが見つかりませんでしたわ💦'], 404);
+    }
+
+
     public function register()
     {
         return view('register');

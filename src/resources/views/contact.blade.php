@@ -19,6 +19,12 @@
                                     <input class="table-input__name1" placeholder="例:山田" type="text" name="last_name" value="{{ old('last_name', $contact['last_name'] ?? '') }}">
                                     <input class="table-input__name2" placeholder="例:太郎" type="text" name="first_name" value="{{ old('first_name', $contact['first_name'] ?? '') }}">
                                 </div>
+                                @error('last_name')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                                @error('first_name')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </td>
                         </tr>
                         <tr class="content-table__item">
@@ -30,30 +36,42 @@
                                 <label for="women">女性</label>
                                 <input class="table-input__sex3" type="radio" id="others" name="gender" value="3" {{ old('gender', $contact['gender'] ?? '') == 3 ? 'checked' : '' }}>
                                 <label for="others">その他</label>
+                                @error('gender')
+                                    <div><span class="error">{{ $message }}</span></div>
+                                @enderror
                             </td>
                         </tr>
                         <tr class="content-table__item">
                             <th class="table__item">メールアドレス</th>
                             <td>
                                 <input  class="table-input__email" placeholder="例:test@example.com" type="email" name="email" value="{{ old('email', $contact['email'] ?? '') }}">
+                                @error('email')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </td>
                         </tr>
                         <tr class="content-table__item">
                             <th class="table__item">電話番号</th>
                             <td>
                                 <div class="table-input__tel--space">
-                                    <input class="table-input__tel" placeholder="080" type="text" name="tel1" value="{{ old('tel1', substr($contact['tel'] ?? '', 0, 3)) }}">
+                                    <input class="table-input__tel" placeholder="080" type="text" name="tel1" value="{{ old('tel1', $contact['tel'] ?? '') }}">
                                     <span class="tel-">-</span>
-                                    <input class="table-input__tel" placeholder="1234" type="text" name="tel2" value="{{ old('tel2', substr($contact['tel'] ?? '', 3, 4)) }}">
+                                    <input class="table-input__tel" placeholder="1234" type="text" name="tel2" value="{{ old('tel2', $contact['tel'] ?? '') }}">
                                     <span class="tel-">-</span>
-                                    <input class="table-input__tel" placeholder="5678" type="text" name="tel3" value="{{ old('tel3', substr($contact['tel'] ?? '', 7, 4)) }}">
+                                    <input class="table-input__tel" placeholder="5678" type="text" name="tel3" value="{{ old('tel3', $contact['tel'] ?? '') }}">
                                 </div>
+                                @error('tel')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </td>
                         </tr>
                         <tr class="content-table__item">
                             <th class="table__item">住所</th>
                             <td>
                                 <input class="table-input__address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" type="text" name="address" value="{{ old('address', $contact['address'] ?? '') }}">
+                                @error('address')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </td>
                         </tr>
                         <tr class="content-table__item">
@@ -71,12 +89,18 @@
                                         <option value="{{ $category['id'] }}" {{ old('category_id', $contact['category_id'] ?? '') == $category['id'] ? 'selected' : '' }}>{{ $category['content'] }}</option>
                                     @endforeach
                                 </select>
+                                @error('category')
+                                    <div><span class="error">{{ $message }}</span></div>
+                                @enderror
                             </td>
                         </tr>
                         <tr class="content-table__item">
                             <th class="table__item">お問い合わせ内容</span></th>
                             <td>
                                 <textarea class="table__contact-textarea" placeholder="お問い合わせ内容をご記載ください" name="detail" id="detail">{{ old('detail', $contact['detail'] ?? '') }}</textarea>
+                                @error('detail')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </td>
                         </tr>
                     </table>

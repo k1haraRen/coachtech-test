@@ -191,11 +191,12 @@ input[type=radio]:checked+label::before {
     height: 100px;
     padding-top: 15px;
     padding-left: 20px;
+    padding-right: 20px;
     border: none;
     background-color: #f4f4f4;
     outline: none;
     color: #8b7a6B;
-    font-size: 100%;
+    font-size: 130%;
 }
 
 .contact-button {
@@ -211,4 +212,11 @@ input[type=radio]:checked+label::before {
     outline: none;
     color: #fff;
     font-size: 18px;
+}
+
+.error {
+    padding: 0px 5px;
+    border-radius: 4px;
+    background-color: #d3cccc;
+    color: red;
 }
