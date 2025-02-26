@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FashionablyController;
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Requests\AuthRequest;
+use Laravel\Fortify\Fortify;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +25,5 @@ Route::get('/admin', [FashionablyController::class, 'admin']);
 Route::get('/admin/search', [FashionablyController::class, 'search']);
 Route::delete('/admin/delete/{id}', [FashionablyController::class, 'destroy'])->name('admin.delete');
 
-Route::get('/register', [FashionablyController::class, 'register']);
-Route::get('/login', [FashionablyController::class, 'login']);
+Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');

@@ -32,7 +32,7 @@ class ContactRequest extends FormRequest
             'tel2' => ['required', 'digits_between:1,5'],
             'tel3' => ['required', 'digits_between:1,5'],
             'address' => ['required'],
-            'category' => ['required'],
+            'category' => ['required|exists:categories,id'],
             'detail' => ['required', 'max:120'],
         ];
     }

@@ -1,5 +1,10 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use App\Http\Requests\AuthRequest;
+use Laravel\Fortify\Fortify;
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 
@@ -156,5 +161,9 @@ return [
             // 'window' => 0,
         ]),
     ],
+
+    'logout' => function () {
+        return redirect('/login');
+    },
 
 ];

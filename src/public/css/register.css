@@ -76,3 +76,10 @@
     font-size: 20px;
     color: #fff;
 }
+
+.error {
+    padding: 0px 5px;
+    border-radius: 4px;
+    background-color: #d3cccc;
+    color: red;
+}

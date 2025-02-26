@@ -54,11 +54,11 @@
                             <th class="table__item">電話番号</th>
                             <td>
                                 <div class="table-input__tel--space">
-                                    <input class="table-input__tel" placeholder="080" type="text" name="tel1" value="{{ old('tel1', $contact['tel'] ?? '') }}">
+                                    <input class="table-input__tel" placeholder="080" type="text" name="tel1" value="{{ old('tel1', session('tel1', '')) }}">
                                     <span class="tel-">-</span>
-                                    <input class="table-input__tel" placeholder="1234" type="text" name="tel2" value="{{ old('tel2', $contact['tel'] ?? '') }}">
+                                    <input class="table-input__tel" placeholder="1234" type="text" name="tel2" value="{{ old('tel2', session('tel2', '')) }}">
                                     <span class="tel-">-</span>
-                                    <input class="table-input__tel" placeholder="5678" type="text" name="tel3" value="{{ old('tel3', $contact['tel'] ?? '') }}">
+                                    <input class="table-input__tel" placeholder="5678" type="text" name="tel3" value="{{ old('tel3', session('tel3', '')) }}">
                                 </div>
                                 @error('tel')
                                     <span class="error">{{ $message }}</span>
@@ -84,7 +84,7 @@
                             <th class="table__item">お問い合わせの種類</th>
                             <td>
                                 <select class="table-select__contacts" name="category_id" id="category_id">
-                                    <option>選択してください</option>
+                                    <option value="">選択してください</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category['id'] }}" {{ old('category_id', $contact['category_id'] ?? '') == $category['id'] ? 'selected' : '' }}>{{ $category['content'] }}</option>
                                     @endforeach

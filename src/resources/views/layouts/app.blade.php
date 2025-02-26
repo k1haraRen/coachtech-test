@@ -24,7 +24,6 @@
                 <nav>
                     <ul class="header-nav">
                         <li class="header-nav__item">
-                            <p class="header-nav__link">register</p>
                         </li>
                     </ul>
                 </nav>

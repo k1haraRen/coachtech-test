@@ -15,12 +15,19 @@ class FashionablyController extends Controller
         $categories = Category::all();
 
         $contact = $request->session()->get('contact', []);
+        $tel1 = $request->session()->get('tel1', '');
+        $tel2 = $request->session()->get('tel2', '');
+        $tel3 = $request->session()->get('tel3', '');
 
         return view('contact', compact('contacts','categories', 'contact'));
     }
     public function confirm(ContactRequest $request)
     {
-        $tel = "{$request->tel1}{$request->tel2}{$request->tel3}";
+        $tel1 = $request->tel1;
+        $tel2 = $request->tel2;
+        $tel3 = $request->tel3;
+
+        $tel = "{$tel1}{$tel2}{$tel3}";
 
         $contact = $request->only(['category_id', 'first_name', 'last_name', 'gender', 'email', 'address', 'building', 'detail']);
         $contact['tel'] = $tel;
@@ -28,6 +35,9 @@ class FashionablyController extends Controller
         $category = Category::find($contact['category_id']);
 
         $request->session()->put('contact', $contact);
+        $request->session()->put('tel1', $tel1);
+        $request->session()->put('tel2', $tel2);
+        $request->session()->put('tel3', $tel3);
 
         return view('confirm', compact('contact','category'));
     }
