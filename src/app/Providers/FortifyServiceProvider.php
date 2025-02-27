@@ -47,9 +47,15 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(10)->by($email . $request->ip());
         });
 
-        Fortify::authenticateUsing(function (AuthRequest $request) {
-            // バリデーションを手動で行う
-            $request->validated(); // バリデーションが失敗すれば自動的にリダイレクトされます
+        Fortify::authenticateUsing(function (Request $request) {
+            $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ], [
+                'email.required' => 'メールアドレスを入力してください。',
+                'email.email' => 'メールアドレスの形式が正しくありません。',
+                'password.required' => 'パスワードを入力してください。',
+            ]);
 
             $credentials = $request->only('email', 'password');
 
@@ -57,7 +63,7 @@ class FortifyServiceProvider extends ServiceProvider
                 return Auth::user();
             }
 
-            return null; // 認証失敗
+            return null;
         });
 
         Fortify::createUsersUsing(AuthRequest::class);
