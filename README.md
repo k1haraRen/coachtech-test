@@ -32,7 +32,19 @@
  * DB_USERNAME=laravel_user
  * DB_PASSWORD=laravel_pass
 
+### Fortifyのセットアップ
+ 1. composer require laravel/fortify
+ 2. App\Providers\FortifyServiceProvider::class,　をconfig/app.phpのprovidersに追加
+ 3. php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
+ 4. php artisan migrate
+
 ## 環境
  - PHP 7.4
  - Laravel 8
  - MySQL 8.0
+
+## URL 
+
+ * 開発環境：https://localhost/
+ * phpMyAdmin：http://localhost:8080/
+   
